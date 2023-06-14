@@ -13,6 +13,7 @@ function main() {
   let adgName = " ad_group.name ";
   let order = " ORDER BY campaign.name ";
   let date30 = " segments.date DURING LAST_30_DAYS ";
+  let cpa = " metrics.conversion_value / metrics.conversions ";
 
   // Build queries
   let cd = [
@@ -25,6 +26,7 @@ function main() {
     campName,
     chType,
     adgName,
+    cpa,
   ]; // campaign by day
   let campQuery =
     "SELECT " + cd.join(",") + " FROM campaign " + " WHERE " + date30 + order;
